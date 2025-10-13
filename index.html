@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+</head>
+
+<body>
+    <header>
+        <h1>Willkommen auf meiner Seite</h1>
+    </header>
+    <main>
+        <div class="intro-flex">
+            <div class="intro-text">
+                <p>Hallo ich bin Daniel!</p>
+                <p>Ich bin ein Student an der Hochschule Mainz.</p>
+                <p>Ich studiere Geoinformatik und Vermessung und bin im 5. Fachsemester.</p>
+            </div>
+            <figure class="intro-img">
+                <img src="assets/me.jpg"
+                    alt="Porträt eines jungen blonden Mannes, etwa 23 Jahre alt, freundlich und gutaussehend, Portraitfoto für Lebenslauf"
+                    onerror="this.onerror=null;this.src='https://placehold.co/200x250?text=Portr%C3%A4t';">
+                <figcaption>Daniel Weis</figcaption>
+            </figure>
+        </div>
+
+        <h2>Lebenslauf</h2>
+        <table class="cv-table">
+            <thead>
+                <tr>
+                    <th>Zeitraum</th>
+                    <th>Position</th>
+                    <th>Arbeitgeber / Institution</th>
+                    <th>Ort</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>seit 2025</td>
+                    <td>Student</td>
+                    <td>Hochschule Mainz</td>
+                    <td>Mainz</td>
+                </tr>
+                <tr>
+                    <td>2023–2025</td>
+                    <td>Werkstudent</td>
+                    <td>Firma XYZ</td>
+                    <td>Frankfurt</td>
+                </tr>
+                <tr>
+                    <td>2020–2023</td>
+                    <td>Praktikant</td>
+                    <td>Firma ABC</td>
+                    <td>Saarbrücken</td>
+                </tr>
+                <tr>
+                    <td>2018–2020</td>
+                    <td>Schüler</td>
+                    <td>Max Mustermann Schule</td>
+                    <td>Saarbrücken</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Leaflet Galerie: 1x3 Karten -->
+        <section>
+            <h2>Meine Lieblingsorte</h2>
+            <div class="leaflet-gallery">
+                <div class="leaflet-card" aria-label="Karte von Saarbrücken">
+                    <h3>Saarbrücken</h3>
+                    <div id="map-sb" class="leaflet-map" aria-label="Leaflet-Karte von Saarbrücken"></div>
+                </div>
+                <div class="leaflet-card" aria-label="Karte von Mainz">
+                    <h3>Mainz</h3>
+                    <div id="map-mainz" class="leaflet-map" aria-label="Leaflet-Karte von Mainz"></div>
+                </div>
+                <div class="leaflet-card" aria-label="Karte von Merzig">
+                    <h3>Merzig</h3>
+                    <div id="map-merzig" class="leaflet-map" aria-label="Leaflet-Karte von Merzig"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script>
+        // Leaflet Karten initialisieren
+        function createMap(id, lat, lng, label) {
+            var map = L.map(id, { zoomControl: false, attributionControl: false }).setView([lat, lng], 12);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+            }).addTo(map);
+            L.marker([lat, lng]).addTo(map).bindPopup(label);
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            createMap('map-sb', 49.240157, 6.996933, 'Saarbrücken');
+            createMap('map-mainz', 49.992861, 8.247253, 'Mainz');
+            createMap('map-merzig', 49.4431, 6.6386, 'Merzig');
+        });
+    </script>
+</body>
+
+</html>

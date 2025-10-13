@@ -1,0 +1,280 @@
+header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Intro Flexbox für Bild und Text */
+.intro-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.intro-text {
+    flex: 2 1 260px;
+    min-width: 180px;
+}
+
+.intro-img {
+    flex: 1 1 220px;
+    max-width: 220px;
+    margin: 0;
+    text-align: center;
+}
+
+.intro-img img {
+    width: 200px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #aaa;
+    object-fit: cover;
+    margin-bottom: 0.5em;
+}
+
+.intro-img figcaption {
+    color: #20b581;
+    font-size: 1em;
+    margin-top: 0.5em;
+}
+
+@media (max-width: 720px) {
+    .intro-flex {
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: stretch;
+    }
+
+    .intro-img {
+        max-width: 100%;
+    }
+
+    .intro-img img {
+        width: 100%;
+        max-width: 220px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Intro Flexbox für Bild und Text */
+.intro-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.intro-text {
+    flex: 2 1 260px;
+    min-width: 180px;
+}
+
+.intro-img {
+    flex: 1 1 220px;
+    max-width: 220px;
+    margin: 0;
+    text-align: center;
+}
+
+.intro-img img {
+    width: 200px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #aaa;
+    object-fit: cover;
+    margin-bottom: 0.5em;
+}
+
+.intro-img figcaption {
+    color: #20b581;
+    font-size: 1em;
+    margin-top: 0.5em;
+}
+
+@media (max-width: 720px) {
+    .intro-flex {
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: stretch;
+    }
+
+    .intro-img {
+        max-width: 100%;
+    }
+
+    .intro-img img {
+        width: 100%;
+        max-width: 220px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Grundlegendes, modernes CSS für Lesbarkeit und Mobilfreundlichkeit */
+html {
+    box-sizing: border-box;
+    font-size: 18px;
+    scroll-behavior: smooth;
+    --accent: #20b581;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #181818;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem 2rem 2.5rem 2rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px #e0e0e0;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--accent);
+    margin-top: 1.3em;
+    margin-bottom: 0.7em;
+    letter-spacing: 0.01em;
+}
+
+p,
+li,
+td,
+th,
+figcaption {
+    font-size: 1.05em;
+    line-height: 1.8;
+}
+
+a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.cv-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1.5rem 0;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px #e0e0e0;
+    font-size: 1.04em;
+}
+
+.cv-table th,
+.cv-table td {
+    border: none;
+    padding: 14px 12px;
+    text-align: left;
+    background: #fff;
+    transition: background 0.2s;
+}
+
+.cv-table th {
+    background: #e3f7f0;
+    color: var(--accent);
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent);
+}
+
+.cv-table tbody tr:hover {
+    background: #e6fcf3;
+}
+
+.leaflet-gallery {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin: 2.5rem 0 1.5rem 0;
+}
+
+.leaflet-card {
+    flex: 1 1 0;
+    min-width: 220px;
+    max-width: 320px;
+    background: #f5f7fa;
+    border-radius: 18px;
+    box-shadow: 0 6px 24px #b2e5d2;
+    padding: 1rem 1rem 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid var(--accent);
+}
+
+.leaflet-card h3 {
+    margin: 0.5rem 0 0.5rem 0;
+    font-size: 1.1em;
+}
+
+.leaflet-map {
+    width: 220px;
+    height: 180px;
+    border-radius: 14px;
+    margin-bottom: 0.7rem;
+    box-shadow: 0 2px 12px #b2e5d2;
+    border: 1.5px solid var(--accent);
+}
+
+figure {
+    margin: 1.5em auto;
+    text-align: center;
+}
+
+figcaption {
+    color: #20b581;
+    font-size: 1em;
+    margin-top: 0.5em;
+}
+
+@media (max-width: 720px) {
+    main {
+        padding: 0.5rem;
+    }
+
+    .leaflet-gallery {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .leaflet-card {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .leaflet-map {
+        width: 100%;
+        min-width: 180px;
+        max-width: 100vw;
+    }
+
+    .cv-table th,
+    .cv-table td {
+        font-size: 0.98em;
+        padding: 10px 6px;
+    }
+}
