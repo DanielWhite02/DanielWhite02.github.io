@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "title": "Studium begonnen: Erstes Semester erfolgreich",
+        "date": "2025-10-01",
+        "image": "assets/news1.svg",
+        "summary": "Ich habe mein Studium der Geoinformatik an der Hochschule Mainz begonnen und freue mich auf spannende Projekte."
+    },
+    {
+        "id": 2,
+        "title": "Projekt: Kleine Webkarte",
+        "date": "2025-09-15",
+        "image": "assets/news2.svg",
+        "summary": "Erstes Projekt: Eine interaktive Karte mit Leaflet zur Anzeige von Studienorten."
+    }
+]

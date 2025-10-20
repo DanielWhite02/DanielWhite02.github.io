@@ -12,95 +12,233 @@
 <body>
     <header>
         <h1>Willkommen auf meiner Seite</h1>
+        <div class="header-controls">
+            <nav class="tabs" role="tablist" aria-label="Haupttabs">
+                <button class="tab active" role="tab" aria-selected="true" data-target="tab-1">About</button>
+                <button class="tab" role="tab" aria-selected="false" data-target="tab-2">News</button>
+                <button class="tab" role="tab" aria-selected="false" data-target="tab-3">Projects</button>
+                <div class="tab-underline"></div>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Wechsel zu dunklem Modus" aria-pressed="false">🌙</button>
+        </div>
     </header>
     <main>
-        <div class="intro-flex">
-            <div class="intro-text">
-                <p>Hallo ich bin Daniel!</p>
-                <p>Ich bin ein Student an der Hochschule Mainz.</p>
-                <p>Ich studiere Geoinformatik und Vermessung und bin im 5. Fachsemester.</p>
-            </div>
-            <figure class="intro-img">
-                <img src="assets/me.jpg"
-                    alt="Porträt eines jungen blonden Mannes, etwa 23 Jahre alt, freundlich und gutaussehend, Portraitfoto für Lebenslauf"
-                    onerror="this.onerror=null;this.src='https://placehold.co/200x250?text=Portr%C3%A4t';">
-                <figcaption>Daniel Weis</figcaption>
-            </figure>
+        <div class="tabs-content">
+            <section id="tab-1" class="tab-panel active" role="tabpanel">
+                <div class="intro-flex">
+                    <div class="intro-text">
+                        <p>Hallo ich bin Daniel!</p>
+                        <p>Ich bin ein Student an der Hochschule Mainz.</p>
+                        <p>Ich studiere Geoinformatik und Vermessung und bin im 5. Fachsemester.</p>
+                    </div>
+                    <figure class="intro-img">
+                        <img src="assets/me.jpg"
+                            alt="Porträt eines jungen blonden Mannes, etwa 23 Jahre alt, freundlich und gutaussehend, Portraitfoto für Lebenslauf"
+                            onerror="this.onerror=null;this.src='https://placehold.co/200x250?text=Portr%C3%A4t';">
+                        <figcaption>Daniel Weis</figcaption>
+                    </figure>
+                </div>
+
+                <h2>Lebenslauf</h2>
+                <table class="cv-table">
+                    <thead>
+                        <tr>
+                            <th>Zeitraum</th>
+                            <th>Position</th>
+                            <th>Arbeitgeber / Institution</th>
+                            <th>Ort</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>seit 2025</td>
+                            <td>Student</td>
+                            <td>Hochschule Mainz</td>
+                            <td>Mainz</td>
+                        </tr>
+                        <tr>
+                            <td>2023–2025</td>
+                            <td>Werkstudent</td>
+                            <td>Firma XYZ</td>
+                            <td>Frankfurt</td>
+                        </tr>
+                        <tr>
+                            <td>2020–2023</td>
+                            <td>Praktikant</td>
+                            <td>Firma ABC</td>
+                            <td>Saarbrücken</td>
+                        </tr>
+                        <tr>
+                            <td>2018–2020</td>
+                            <td>Schüler</td>
+                            <td>Max Mustermann Schule</td>
+                            <td>Saarbrücken</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="tab-2" class="tab-panel" role="tabpanel">
+                <h2>News</h2>
+                <div id="news-list" class="news-list">
+                    <p>Keine News vorhanden.</p>
+                </div>
+            </section>
+            <section id="tab-3" class="tab-panel" role="tabpanel">
+                <h2>Meine Lieblingsorte</h2>
+                <div class="leaflet-gallery">
+                    <div class="leaflet-card map-sb" aria-label="Karte von Saarbrücken">
+                        <h3>Saarbrücken</h3>
+                        <div id="map-sb" class="leaflet-map" aria-label="Leaflet-Karte von Saarbrücken"></div>
+                    </div>
+                    <div class="leaflet-card map-mainz" aria-label="Karte von Mainz">
+                        <h3>Mainz</h3>
+                        <div id="map-mainz" class="leaflet-map" aria-label="Leaflet-Karte von Mainz"></div>
+                    </div>
+                    <div class="leaflet-card map-merzig" aria-label="Karte von Merzig">
+                        <h3>Merzig</h3>
+                        <div id="map-merzig" class="leaflet-map" aria-label="Leaflet-Karte von Merzig"></div>
+                    </div>
+                </div>
+            </section>
         </div>
-
-        <h2>Lebenslauf</h2>
-        <table class="cv-table">
-            <thead>
-                <tr>
-                    <th>Zeitraum</th>
-                    <th>Position</th>
-                    <th>Arbeitgeber / Institution</th>
-                    <th>Ort</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>seit 2025</td>
-                    <td>Student</td>
-                    <td>Hochschule Mainz</td>
-                    <td>Mainz</td>
-                </tr>
-                <tr>
-                    <td>2023–2025</td>
-                    <td>Werkstudent</td>
-                    <td>Firma XYZ</td>
-                    <td>Frankfurt</td>
-                </tr>
-                <tr>
-                    <td>2020–2023</td>
-                    <td>Praktikant</td>
-                    <td>Firma ABC</td>
-                    <td>Saarbrücken</td>
-                </tr>
-                <tr>
-                    <td>2018–2020</td>
-                    <td>Schüler</td>
-                    <td>Max Mustermann Schule</td>
-                    <td>Saarbrücken</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Leaflet Galerie: 1x3 Karten -->
-        <section>
-            <h2>Meine Lieblingsorte</h2>
-            <div class="leaflet-gallery">
-                <div class="leaflet-card" aria-label="Karte von Saarbrücken">
-                    <h3>Saarbrücken</h3>
-                    <div id="map-sb" class="leaflet-map" aria-label="Leaflet-Karte von Saarbrücken"></div>
-                </div>
-                <div class="leaflet-card" aria-label="Karte von Mainz">
-                    <h3>Mainz</h3>
-                    <div id="map-mainz" class="leaflet-map" aria-label="Leaflet-Karte von Mainz"></div>
-                </div>
-                <div class="leaflet-card" aria-label="Karte von Merzig">
-                    <h3>Merzig</h3>
-                    <div id="map-merzig" class="leaflet-map" aria-label="Leaflet-Karte von Merzig"></div>
-                </div>
-            </div>
-        </section>
     </main>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script>
-        // Leaflet Karten initialisieren
+        // Leaflet Karten initialisieren (erst wenn Tab 'Karten' geöffnet wird)
         function createMap(id, lat, lng, label) {
             var map = L.map(id, { zoomControl: false, attributionControl: false }).setView([lat, lng], 12);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
             }).addTo(map);
             L.marker([lat, lng]).addTo(map).bindPopup(label);
+            // save reference for later invalidateSize
+            window[id] = map;
+            return map;
         }
-        document.addEventListener('DOMContentLoaded', function () {
-            createMap('map-sb', 49.240157, 6.996933, 'Saarbrücken');
-            createMap('map-mainz', 49.992861, 8.247253, 'Mainz');
-            createMap('map-merzig', 49.4431, 6.6386, 'Merzig');
+    </script>
+    <script>
+        // Robust tab and theme initializer (wait for DOM)
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = Array.from(document.querySelectorAll('.tab'));
+            const panels = Array.from(document.querySelectorAll('.tab-panel'));
+            const underline = document.querySelector('.tab-underline');
+            const headerEl = document.querySelector('header');
+            const mainEl = document.querySelector('main');
+
+            // ensure sticky header doesn't overlap the main content
+            function adjustHeaderSpacing() {
+                if (!headerEl || !mainEl) return;
+                const h = Math.ceil(headerEl.getBoundingClientRect().height);
+                mainEl.style.paddingTop = h + 'px';
+            }
+            // initial adjust and on resize
+            adjustHeaderSpacing();
+            window.addEventListener('resize', adjustHeaderSpacing);
+
+            function showPanel(id) {
+                panels.forEach(p => p.classList.toggle('active', p.id === id));
+                tabs.forEach(t => t.classList.toggle('active', t.dataset.target === id));
+                tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.target === id ? 'true' : 'false'));
+                moveUnderline(document.querySelector('.tab.active'));
+            }
+
+            function moveUnderline(el) {
+                if (!underline || !el) return;
+                const rect = el.getBoundingClientRect();
+                const parentRect = el.parentElement.getBoundingClientRect();
+                underline.style.width = rect.width + 'px';
+                underline.style.transform = `translateX(${rect.left - parentRect.left}px)`;
+            }
+
+            // ensure only first panel is active on load
+            if (!panels.some(p => p.classList.contains('active'))) {
+                showPanel('tab-1');
+            } else {
+                moveUnderline(document.querySelector('.tab.active'));
+            }
+
+            // click handlers
+            tabs.forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = tab.dataset.target;
+                    if (!target) return;
+                    showPanel(target);
+
+                    // lazy actions
+                    if (target === 'tab-3' && !window.mapsCreated) {
+                        createMap('map-sb', 49.240157, 6.996933, 'Saarbrücken');
+                        createMap('map-mainz', 49.992861, 8.247253, 'Mainz');
+                        createMap('map-merzig', 49.4431, 6.6386, 'Merzig');
+                        window.mapsCreated = true;
+                    }
+                    if (target === 'tab-2' && !window.newsLoaded) {
+                        fetch('assets/news.json').then(r => r.json()).then(data => {
+                            const container = document.getElementById('news-list');
+                            if (!container) return;
+                            container.innerHTML = '';
+                            data.forEach(item => {
+                                const article = document.createElement('article');
+                                article.className = 'news-item';
+                                article.innerHTML = `\n                                <img src="${item.image || 'https://placehold.co/160x100?text=News'}" alt="Bild: ${item.title}" />\n                                <div class="news-body">\n                                    <h3>${item.title}</h3>\n                                    <time>${item.date}</time>\n                                    <p>${item.summary}</p>\n                                </div>`;
+                                container.appendChild(article);
+                            });
+                            window.newsLoaded = true;
+                        }).catch(err => { console.error('News load error', err); const container = document.getElementById('news-list'); if (container) container.innerHTML = '<p>Fehler beim Laden der News.</p>'; });
+                    }
+                });
+                tab.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                        const idx = tabs.indexOf(document.querySelector('.tab.active'));
+                        const nextIdx = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 + tabs.length) % tabs.length;
+                        tabs[nextIdx].focus();
+                    }
+                });
+            });
+
+            // Theme toggle
+            const themeBtn = document.getElementById('theme-toggle');
+            function setDark(isDark) {
+                if (isDark) document.documentElement.classList.add('dark');
+                else document.documentElement.classList.remove('dark');
+                if (themeBtn) {
+                    themeBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+                }
+            }
+            const saved = localStorage.getItem('dark-mode');
+            const isDarkStart = saved === '1';
+            setDark(isDarkStart);
+            // set button emoji according to state
+            function updateThemeButton() {
+                if (!themeBtn) return;
+                const isDark = document.documentElement.classList.contains('dark');
+                themeBtn.textContent = isDark ? '☀️' : '🌙';
+                themeBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+            }
+            updateThemeButton();
+            if (themeBtn) themeBtn.addEventListener('click', function () {
+                const isDark = document.documentElement.classList.toggle('dark');
+                localStorage.setItem('dark-mode', isDark ? '1' : '0');
+                updateThemeButton();
+            });
+
+            window.addEventListener('resize', () => moveUnderline(document.querySelector('.tab.active')));
         });
     </script>
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-right">
+                <a href="mailto:Daniel.weis@students.hs-mainz.de?subject=Kontakt%20%C3%BCber%20Website"
+                    class="footer-link" aria-label="E-Mail an Daniel">
+                    <img src="assets/email.svg" alt="E-Mail" class="footer-icon" />
+                </a>
+                <a href="https://github.com/DanielWhite02/DanielWhite02.github.io" class="footer-link"
+                    aria-label="GitHub Repository von Daniel" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/github.svg" alt="GitHub" class="footer-icon" />
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
