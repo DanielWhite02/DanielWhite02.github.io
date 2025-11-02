@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoD2 Gebäude Mainz (Cesium)</title>
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.125/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.125/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <style>
+        html,
+        body,
+        #cesiumContainer {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #cesiumContainer {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cesiumContainer"></div>
+    <script>
+        // Initialisiere Cesium Viewer
+        var viewer = new Cesium.Viewer('cesiumContainer', {
+            shadows: false,
+            geocoder: false,
+            baseLayerPicker: false
+        });
+
+        // OpenStreetMap Hintergrund
+        var osm = new Cesium.OpenStreetMapImageryProvider({
+            url: '//a.tile.openstreetmap.org/',
+            credit: new Cesium.Credit("<a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>", true)
+        });
+        viewer.imageryLayers.addImageryProvider(osm);
+
+        // WMS Hintergrundkarte (SmartMapping)
+        const provider = new Cesium.WebMapServiceImageryProvider({
+            url: 'https://sgx.geodatenzentrum.de/wms_basemapde?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities',
+            layers: "de_basemapde_web_raster_farbe",
+            parameters: {
+                transparent: true,
+                format: "image/png",
+            }
+        });
+        viewer.imageryLayers.addImageryProvider(provider);
+
+        // Kamera auf Mainz zentrieren
+        viewer.camera.flyTo({
+            destination: Cesium.Cartesian3.fromDegrees(8.2473, 49.9929, 1500.0),
+            orientation: {
+                heading: Cesium.Math.toRadians(0.0),
+                pitch: Cesium.Math.toRadians(-50.0),
+                roll: 0.0
+            }
+        });
+
+        // 3D-Tileset für LoD2-Gebäude laden
+        window.startup = async function (Cesium) {
+            'use strict';
+            try {
+                const tileset = await Cesium.Cesium3DTileset.fromUrl(
+                    "https://sg.geodatenzentrum.de/gdz_basemapde_3d_gebaeude/lod2_4978_null.json",
+                    { showOutline: false }
+                );
+                viewer.scene.primitives.add(tileset);
+                // Flächen einfärben
+                var cityStyle = new Cesium.Cesium3DTileStyle({
+                    color: {
+                        conditions: [
+                            ["${surface} === 'wall'", "color('#f2f2f2')"],
+                            ["${surface} === 'roof'", "color('#ff5c4d')"],
+                            ["${surface} === 'bridge'", "color('#999999')"]
+                        ]
+                    },
+                });
+                tileset.style = cityStyle;
+            } catch (error) {
+                console.error(`Error creating tileset: ${error}`);
+            }
+        };
+
+        // Starte die Tileset-Ladung
+        if (typeof Cesium !== 'undefined') {
+            window.startupCalled = true;
+            window.startup(Cesium).catch((error) => {
+                "use strict";
+                console.error(error);
+            });
+        }
+    </script>
+</body>
+
+</html>

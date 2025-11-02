@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css" />
+
+    <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>
+        #map_bbaf99cfee2c611d3224b086bee889ed {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+        }
+
+        .leaflet-container {
+            font-size: 1rem;
+        }
+    </style>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <style>
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
+
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
+
+
+</head>
+
+<body>
+
+
+    <div class="folium-map" id="map_bbaf99cfee2c611d3224b086bee889ed"></div>
+
+</body>
+<script>
+
+
+    var map_bbaf99cfee2c611d3224b086bee889ed = L.map(
+        "map_bbaf99cfee2c611d3224b086bee889ed",
+        {
+            center: [40.0, 45.0],
+            crs: L.CRS.EPSG3857,
+            ...{
+                "zoom": 3,
+                "zoomControl": true,
+                "preferCanvas": false,
+            }
+
+        }
+    );
+
+
+
+
+
+    var tile_layer_ee079973d32585e324fd782b431e136d = L.tileLayer(
+        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {
+            "minZoom": 0,
+            "maxZoom": 19,
+            "maxNativeZoom": 19,
+            "noWrap": false,
+            "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+            "subdomains": "abc",
+            "detectRetina": false,
+            "tms": false,
+            "opacity": 1,
+        }
+
+    );
+
+
+    tile_layer_ee079973d32585e324fd782b431e136d.addTo(map_bbaf99cfee2c611d3224b086bee889ed);
+
+
+    var tile_layer_3fe1eef374acf304951a2ccf75755ea8 = L.tileLayer(
+        "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+        {
+            "minZoom": 0,
+            "maxZoom": 20,
+            "maxNativeZoom": 20,
+            "noWrap": false,
+            "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+            "subdomains": "abcd",
+            "detectRetina": false,
+            "tms": false,
+            "opacity": 1,
+        }
+
+    );
+
+
+    tile_layer_3fe1eef374acf304951a2ccf75755ea8.addTo(map_bbaf99cfee2c611d3224b086bee889ed);
+
+
+    var marker_1f658af13cf33af0cf20592de4550bf3 = L.marker(
+        [48.8584, 2.2945],
+        {
+        }
+    ).addTo(map_bbaf99cfee2c611d3224b086bee889ed);
+
+
+    var icon_5121f9b6ee0a39fae2b52e7fb4957f30 = L.AwesomeMarkers.icon(
+        {
+            "markerColor": "blue",
+            "iconColor": "white",
+            "icon": "info-sign",
+            "prefix": "glyphicon",
+            "extraClasses": "fa-rotate-0",
+        }
+    );
+
+
+    var popup_50b01ee779f94bd32c0fe6ac0e826cde = L.popup({
+        "maxWidth": 250,
+    });
+
+
+
+    var html_9115d5b685f906255b3298688ee2adc5 = $(`<div id="html_9115d5b685f906255b3298688ee2adc5" style="width: 100.0%; height: 100.0%;"><b>Eiffelturm</b><br>Paris, Frankreich</div>`)[0];
+    popup_50b01ee779f94bd32c0fe6ac0e826cde.setContent(html_9115d5b685f906255b3298688ee2adc5);
+
+
+
+    marker_1f658af13cf33af0cf20592de4550bf3.bindPopup(popup_50b01ee779f94bd32c0fe6ac0e826cde)
+        ;
+
+
+
+
+    marker_1f658af13cf33af0cf20592de4550bf3.bindTooltip(
+        `<div>
+                     Eiffelturm
+                 </div>`,
+        {
+            "sticky": true,
+        }
+    );
+
+
+    marker_1f658af13cf33af0cf20592de4550bf3.setIcon(icon_5121f9b6ee0a39fae2b52e7fb4957f30);
+
+
+    var marker_82ac979e09f2ef7922e041bcb46c2175 = L.marker(
+        [40.6892, -74.0445],
+        {
+        }
+    ).addTo(map_bbaf99cfee2c611d3224b086bee889ed);
+
+
+    var icon_e42015a3c639707e4a38f0a82b0ff6d1 = L.AwesomeMarkers.icon(
+        {
+            "markerColor": "green",
+            "iconColor": "white",
+            "icon": "star",
+            "prefix": "glyphicon",
+            "extraClasses": "fa-rotate-0",
+        }
+    );
+
+
+    var popup_31710272f4c7fc22469d8388facd5a65 = L.popup({
+        "maxWidth": 250,
+    });
+
+
+
+    var html_40b588b2190d4bc9b7b80290814b357b = $(`<div id="html_40b588b2190d4bc9b7b80290814b357b" style="width: 100.0%; height: 100.0%;"><b>Freiheitsstatue</b><br>New York, USA</div>`)[0];
+    popup_31710272f4c7fc22469d8388facd5a65.setContent(html_40b588b2190d4bc9b7b80290814b357b);
+
+
+
+    marker_82ac979e09f2ef7922e041bcb46c2175.bindPopup(popup_31710272f4c7fc22469d8388facd5a65)
+        ;
+
+
+
+
+    marker_82ac979e09f2ef7922e041bcb46c2175.bindTooltip(
+        `<div>
+                     Freiheitsstatue
+                 </div>`,
+        {
+            "sticky": true,
+        }
+    );
+
+
+    marker_82ac979e09f2ef7922e041bcb46c2175.setIcon(icon_e42015a3c639707e4a38f0a82b0ff6d1);
+
+
+    var marker_24761b63a9560ae7f63ff8885d39e007 = L.marker(
+        [41.8902, 12.4922],
+        {
+        }
+    ).addTo(map_bbaf99cfee2c611d3224b086bee889ed);
+
+
+    var icon_141dcdc3727f4a3691f179f9174b89a8 = L.AwesomeMarkers.icon(
+        {
+            "markerColor": "red",
+            "iconColor": "white",
+            "icon": "ok-sign",
+            "prefix": "glyphicon",
+            "extraClasses": "fa-rotate-0",
+        }
+    );
+
+
+    var popup_cf46e1bb73d535b31b60d1b56a09b558 = L.popup({
+        "maxWidth": 250,
+    });
+
+
+
+    var html_16830e93e8052d261fd70ac1a4391e56 = $(`<div id="html_16830e93e8052d261fd70ac1a4391e56" style="width: 100.0%; height: 100.0%;"><b>Kolosseum</b><br>Rom, Italien</div>`)[0];
+    popup_cf46e1bb73d535b31b60d1b56a09b558.setContent(html_16830e93e8052d261fd70ac1a4391e56);
+
+
+
+    marker_24761b63a9560ae7f63ff8885d39e007.bindPopup(popup_cf46e1bb73d535b31b60d1b56a09b558)
+        ;
+
+
+
+
+    marker_24761b63a9560ae7f63ff8885d39e007.bindTooltip(
+        `<div>
+                     Kolosseum
+                 </div>`,
+        {
+            "sticky": true,
+        }
+    );
+
+
+    marker_24761b63a9560ae7f63ff8885d39e007.setIcon(icon_141dcdc3727f4a3691f179f9174b89a8);
+
+
+    var marker_8200d57f6f902851a06c8369aa646b13 = L.marker(
+        [40.4319, 116.5704],
+        {
+        }
+    ).addTo(map_bbaf99cfee2c611d3224b086bee889ed);
+
+
+    var icon_fb934caa4fd8f4a6be523494835c511d = L.AwesomeMarkers.icon(
+        {
+            "markerColor": "orange",
+            "iconColor": "white",
+            "icon": "tower",
+            "prefix": "glyphicon",
+            "extraClasses": "fa-rotate-0",
+        }
+    );
+
+
+    var popup_f252e206dd356772a7f96d5cd92ffdc4 = L.popup({
+        "maxWidth": 250,
+    });
+
+
+
+    var html_e4d0ce854cf126fc0ca03fd4260cead2 = $(`<div id="html_e4d0ce854cf126fc0ca03fd4260cead2" style="width: 100.0%; height: 100.0%;"><b>Große Mauer</b><br>China</div>`)[0];
+    popup_f252e206dd356772a7f96d5cd92ffdc4.setContent(html_e4d0ce854cf126fc0ca03fd4260cead2);
+
+
+
+    marker_8200d57f6f902851a06c8369aa646b13.bindPopup(popup_f252e206dd356772a7f96d5cd92ffdc4)
+        ;
+
+
+
+
+    marker_8200d57f6f902851a06c8369aa646b13.bindTooltip(
+        `<div>
+                     Große Mauer
+                 </div>`,
+        {
+            "sticky": true,
+        }
+    );
+
+
+    marker_8200d57f6f902851a06c8369aa646b13.setIcon(icon_fb934caa4fd8f4a6be523494835c511d);
+
+
+    var marker_1b0923feb4b12bc499dc5ac400ea7535 = L.marker(
+        [27.1751, 78.0421],
+        {
+        }
+    ).addTo(map_bbaf99cfee2c611d3224b086bee889ed);
+
+
+    var icon_a4ab99b7f9a99ce50f8027f773c69fe9 = L.AwesomeMarkers.icon(
+        {
+            "markerColor": "purple",
+            "iconColor": "white",
+            "icon": "heart",
+            "prefix": "glyphicon",
+            "extraClasses": "fa-rotate-0",
+        }
+    );
+
+
+    var popup_871eb10524c6c9589a217bfa23a50103 = L.popup({
+        "maxWidth": 250,
+    });
+
+
+
+    var html_e899a7e4aa93893288b4d9f5ea326c15 = $(`<div id="html_e899a7e4aa93893288b4d9f5ea326c15" style="width: 100.0%; height: 100.0%;"><b>Taj Mahal</b><br>Agra, Indien</div>`)[0];
+    popup_871eb10524c6c9589a217bfa23a50103.setContent(html_e899a7e4aa93893288b4d9f5ea326c15);
+
+
+
+    marker_1b0923feb4b12bc499dc5ac400ea7535.bindPopup(popup_871eb10524c6c9589a217bfa23a50103)
+        ;
+
+
+
+
+    marker_1b0923feb4b12bc499dc5ac400ea7535.bindTooltip(
+        `<div>
+                     Taj Mahal
+                 </div>`,
+        {
+            "sticky": true,
+        }
+    );
+
+
+    marker_1b0923feb4b12bc499dc5ac400ea7535.setIcon(icon_a4ab99b7f9a99ce50f8027f773c69fe9);
+
+
+    map_bbaf99cfee2c611d3224b086bee889ed.fitBounds(
+        [[48.8584, 2.2945], [40.6892, -74.0445], [41.8902, 12.4922], [40.4319, 116.5704], [27.1751, 78.0421]],
+        { "padding": [20, 20], "maxZoom": 3 }
+    );
+
+
+    var layer_control_33907d6e891cb3bfd5c0e671bd04321e_layers = {
+        base_layers: {
+            "openstreetmap": tile_layer_ee079973d32585e324fd782b431e136d,
+            "Carto Light": tile_layer_3fe1eef374acf304951a2ccf75755ea8,
+        },
+        overlays: {
+        },
+    };
+    let layer_control_33907d6e891cb3bfd5c0e671bd04321e = L.control.layers(
+        layer_control_33907d6e891cb3bfd5c0e671bd04321e_layers.base_layers,
+        layer_control_33907d6e891cb3bfd5c0e671bd04321e_layers.overlays,
+        {
+            "position": "topright",
+            "collapsed": false,
+            "autoZIndex": true,
+        }
+    ).addTo(map_bbaf99cfee2c611d3224b086bee889ed);
+
+
+
+    tile_layer_ee079973d32585e324fd782b431e136d.addTo(map_bbaf99cfee2c611d3224b086bee889ed);
+
+
+    tile_layer_3fe1eef374acf304951a2ccf75755ea8.addTo(map_bbaf99cfee2c611d3224b086bee889ed);
+
+
+    marker_1f658af13cf33af0cf20592de4550bf3.setIcon(icon_5121f9b6ee0a39fae2b52e7fb4957f30);
+
+
+    marker_82ac979e09f2ef7922e041bcb46c2175.setIcon(icon_e42015a3c639707e4a38f0a82b0ff6d1);
+
+
+    marker_24761b63a9560ae7f63ff8885d39e007.setIcon(icon_141dcdc3727f4a3691f179f9174b89a8);
+
+
+    marker_8200d57f6f902851a06c8369aa646b13.setIcon(icon_fb934caa4fd8f4a6be523494835c511d);
+
+
+    marker_1b0923feb4b12bc499dc5ac400ea7535.setIcon(icon_a4ab99b7f9a99ce50f8027f773c69fe9);
+
+</script>
+
+</html>

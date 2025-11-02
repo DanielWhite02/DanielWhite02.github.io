@@ -14,10 +14,13 @@ header {
     z-index: 40;
     background: var(--bg);
     backdrop-filter: blur(6px);
-    box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
 }
 
-.dark header { background: var(--bg); box-shadow: 0 1px 8px rgba(0,0,0,0.35); }
+.dark header {
+    background: var(--bg);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
 
 .header-controls {
     /* keep controls in normal flow so they don't overlap content */
@@ -38,10 +41,13 @@ header {
 
 .tabs {
     flex-wrap: nowrap;
-    overflow: visible; /* no horizontal scrolling */
+    overflow: visible;
+    /* no horizontal scrolling */
 }
 
-.tab { flex: 0 0 auto; }
+.tab {
+    flex: 0 0 auto;
+}
 
 .tab {
     background: transparent;
@@ -57,7 +63,7 @@ header {
 }
 
 .tab:focus {
-    outline: 3px solid rgba(32,181,129,0.12);
+    outline: 3px solid rgba(32, 181, 129, 0.12);
     outline-offset: 3px;
 }
 
@@ -67,7 +73,14 @@ header {
 }
 
 /* Screen-reader only */
-.sr-only { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; }
+.sr-only {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
 
 /* Make footer SVG icons appear white in dark mode for contrast.
    If icons are inline SVGs they will inherit currentColor; for external raster/SVG use a filter fallback. */
@@ -155,7 +168,11 @@ header {
         padding: 0.8rem 1rem;
     }
 
-    .header-controls { width: 100%; justify-content: flex-end; }
+    .header-controls {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
     .footer-icon {
         width: 32px;
         height: 32px;
@@ -433,24 +450,22 @@ a:hover {
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
 }
 
+/* 2x2 grid for project maps (larger previews) */
 .leaflet-gallery {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    justify-content: center;
     margin: 2.5rem 0 1.5rem 0;
 }
 
 .leaflet-card {
-    flex: 1 1 0;
-    min-width: 220px;
-    max-width: 320px;
     background: var(--card);
     border-radius: 18px;
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
-    padding: 1rem 1rem 1.5rem 1rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     border: 2px solid var(--accent);
 }
 
@@ -460,13 +475,33 @@ a:hover {
 }
 
 .leaflet-map {
-    width: 220px;
-    height: 180px;
-    border-radius: 14px;
+    width: 100%;
+    height: 320px;
+    border-radius: 12px;
     margin-bottom: 0.7rem;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     border: 1.5px solid var(--accent);
     background: var(--map-bg, transparent);
+}
+
+/* iframe embeds for full HTML maps */
+.map-embed {
+    width: 100%;
+    height: 320px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    background: var(--map-bg, transparent);
+}
+
+/* Full-width 3D Cesium map styling: span both grid columns and increase height */
+.leaflet-card.map-3d {
+    grid-column: 1 / -1;
+}
+
+.map-embed-3d {
+    height: 520px;
+    min-height: 360px;
 }
 
 figure {
@@ -486,20 +521,24 @@ figcaption {
     }
 
     .leaflet-gallery {
-        flex-direction: column;
-        gap: 2rem;
-        align-items: center;
+        display: block;
     }
 
     .leaflet-card {
         max-width: 100%;
         width: 100%;
+        margin-bottom: 1.2rem;
     }
 
     .leaflet-map {
         width: 100%;
-        min-width: 180px;
+        height: 240px;
+        min-width: 0;
         max-width: 100vw;
+    }
+
+    .map-embed-3d {
+        height: 360px;
     }
 
     .cv-table th,

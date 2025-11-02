@@ -1,16 +1,23 @@
 [
     {
         "id": 1,
-        "title": "Studium begonnen: Erstes Semester erfolgreich",
-        "date": "2025-10-01",
-        "image": "assets/news1.svg",
-        "summary": "Ich habe mein Studium der Geoinformatik an der Hochschule Mainz begonnen und freue mich auf spannende Projekte."
+        "title": "Neue GNSS-Satelliten für präzise Vermessung gestartet",
+        "date": "2025-10-20",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/GNSS_satellite.jpg/320px-GNSS_satellite.jpg",
+        "summary": "Die Europäische Weltraumorganisation hat zwei neue Galileo-Satelliten ins All gebracht. Sie verbessern die Genauigkeit der Positionsbestimmung für Vermessungsingenieure und Geodäten weltweit."
     },
     {
         "id": 2,
-        "title": "Projekt: Kleine Webkarte",
-        "date": "2025-09-15",
-        "image": "assets/news2.svg",
-        "summary": "Erstes Projekt: Eine interaktive Karte mit Leaflet zur Anzeige von Studienorten."
+        "title": "Neuer Standard für digitale Kataster eingeführt",
+        "date": "2025-09-30",
+        "image": "https://www.ldbv.bayern.de/fileadmin/user_upload/kataster/katasterkarte.jpg",
+        "summary": "Das Bundesamt für Kartographie und Geodäsie hat einen neuen Standard für die digitale Führung von Liegenschaftskataster veröffentlicht. Ziel ist eine bessere Interoperabilität und Aktualität der Daten."
+    },
+    {
+        "id": 3,
+        "title": "Laserscanning revolutioniert Bauvermessung",
+        "date": "2025-09-10",
+        "image": "https://www.geo-matching.com/uploads/2021/09/laserscanning.jpg",
+        "summary": "Moderne Laserscanner ermöglichen millimetergenaue 3D-Modelle von Gebäuden und Gelände. Die Technik wird zunehmend im Bauwesen und bei der Dokumentation historischer Bauwerke eingesetzt."
     }
 ]

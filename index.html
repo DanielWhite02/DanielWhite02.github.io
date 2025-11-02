@@ -19,7 +19,8 @@
                 <button class="tab" role="tab" aria-selected="false" data-target="tab-3">Projects</button>
                 <div class="tab-underline"></div>
             </nav>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Wechsel zu dunklem Modus" aria-pressed="false">🌙</button>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Wechsel zu dunklem Modus"
+                aria-pressed="false">🌙</button>
         </div>
     </header>
     <main>
@@ -84,19 +85,51 @@
                 </div>
             </section>
             <section id="tab-3" class="tab-panel" role="tabpanel">
-                <h2>Meine Lieblingsorte</h2>
+                <h2>Projekte — Karten</h2>
                 <div class="leaflet-gallery">
-                    <div class="leaflet-card map-sb" aria-label="Karte von Saarbrücken">
-                        <h3>Saarbrücken</h3>
-                        <div id="map-sb" class="leaflet-map" aria-label="Leaflet-Karte von Saarbrücken"></div>
+                    <div class="leaflet-card map-basiskarte" aria-label="Basiskarte">
+                        <h3>Basiskarte</h3>
+                        <iframe src="maps/map_1_basiskarte.html" class="map-embed" title="Basiskarte"
+                            aria-label="Basiskarte" loading="lazy"
+                            sandbox="allow-scripts allow-same-origin allow-popups" allow="fullscreen"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <p class="map-links"><a href="maps/map_1_basiskarte.html" target="_blank"
+                                rel="noopener noreferrer">Open full map (Basiskarte)</a></p>
                     </div>
-                    <div class="leaflet-card map-mainz" aria-label="Karte von Mainz">
-                        <h3>Mainz</h3>
-                        <div id="map-mainz" class="leaflet-map" aria-label="Leaflet-Karte von Mainz"></div>
+                    <div class="leaflet-card map-punkte" aria-label="Punkte">
+                        <h3>Punkte</h3>
+                        <iframe src="maps/map_2_punkte.html" class="map-embed" title="Punkte" aria-label="Punkte"
+                            loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups" allow="fullscreen"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <p class="map-links"><a href="maps/map_2_punkte.html" target="_blank"
+                                rel="noopener noreferrer">Open full map (Punkte)</a></p>
                     </div>
-                    <div class="leaflet-card map-merzig" aria-label="Karte von Merzig">
-                        <h3>Merzig</h3>
-                        <div id="map-merzig" class="leaflet-map" aria-label="Leaflet-Karte von Merzig"></div>
+                    <div class="leaflet-card map-reiseroute" aria-label="Reiseroute">
+                        <h3>Reiseroute</h3>
+                        <iframe src="maps/map_3_reiseroute.html" class="map-embed" title="Reiseroute"
+                            aria-label="Reiseroute" loading="lazy"
+                            sandbox="allow-scripts allow-same-origin allow-popups" allow="fullscreen"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <p class="map-links"><a href="maps/map_3_reiseroute.html" target="_blank"
+                                rel="noopener noreferrer">Open full map (Reiseroute)</a></p>
+                    </div>
+                    <div class="leaflet-card map-flaechen" aria-label="Flächen">
+                        <h3>Flächen</h3>
+                        <iframe src="maps/map_4_flaechen_online.html" class="map-embed" title="Flächen"
+                            aria-label="Flächen" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"
+                            allow="fullscreen" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <p class="map-links"><a href="maps/map_4_flaechen_online.html" target="_blank"
+                                rel="noopener noreferrer">Open full map (Flächen)</a></p>
+                    </div>
+                    <!-- Full-width 3D Cesium map below the 2x2 grid -->
+                    <div class="leaflet-card map-3d" aria-label="3D Gebäude">
+                        <h3>3D Gebäude (Cesium)</h3>
+                        <iframe src="maps/map_5_3d.html" class="map-embed map-embed-3d" title="3D Gebäude"
+                            aria-label="3D Gebäude" loading="lazy"
+                            sandbox="allow-scripts allow-same-origin allow-popups" allow="fullscreen"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <p class="map-links"><a href="maps/map_5_3d.html" target="_blank" rel="noopener noreferrer">Open
+                                full map (3D Gebäude)</a></p>
                     </div>
                 </div>
             </section>
@@ -167,9 +200,7 @@
 
                     // lazy actions
                     if (target === 'tab-3' && !window.mapsCreated) {
-                        createMap('map-sb', 49.240157, 6.996933, 'Saarbrücken');
-                        createMap('map-mainz', 49.992861, 8.247253, 'Mainz');
-                        createMap('map-merzig', 49.4431, 6.6386, 'Merzig');
+                        // maps are embedded as full HTML (iframes) in the page; no JS init required
                         window.mapsCreated = true;
                     }
                     if (target === 'tab-2' && !window.newsLoaded) {
